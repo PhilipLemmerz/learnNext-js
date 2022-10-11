@@ -1,0 +1,52 @@
+.listItem {
+    list-style: none;
+    background-color: rgba(177, 212, 233, 0.664);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: gray 0px 0px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image {
+    width: 50%;
+    object-fit: cover;
+}
+
+.description {
+    text-align: center;
+}
+
+.exploreBTN {
+    text-decoration: none;
+    padding: 5px 10px 5px 10px;
+    background-color: orange;
+    color: black;
+    border-radius: 5px;
+    margin-top: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgba(167, 247, 180, 0.582) ;
+}
+

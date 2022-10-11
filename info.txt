@@ -1,0 +1,52 @@
+Learnings next.js
+______________________________________
+
+
+> Routing
+> Routing mit dynamic Parmams als file oder foldername  [id]
+> Routing wo wir den komplette Pfad extrahieren (z.B 2022/12)
+> Verlinken statisch oder dynamisch
+> durch Objekt loopen und links erstellen
+> programmatsich routen
+> Eigene 404 Page
+> Icons einbinden -> JSX Code von HeroIcons kopieren und einbinden !!
+
+> Rendering
+> 4 Arten -> getStaticProps() -> Daten laden bevor Response gesnedet wird und fertige HTML zurücksenden -> Anwendungsfall pages die Daten von Datenbanken oder FileSystem brauchen
+          -> getStaticPaths() -> dynamische Seiten vorendern um fertige Seite zurückzugeben bei paths [id] z.B. -> Anwendungsfall pages die auf basis dynamischen Params generiert werden
+          -> getServerSideProps() -> Seiten für jeden Request auf ServerSeite individuell bauen und dann zurücksenden (wie node.js template-engine) -> Anwendungsfall: Wenn man zugriff auf Req und Res Objekt braucht
+          -> dynamisches Laden der Daten auf ClientSide mit useEffect() wie bei React normal (für admin bereiche sinnvoll wo SEO unwichtig ist) -> Anwendungsfall: Bestellübersicht eines Users
+          -> dynamisches Nachladen von data kann mit getStaticProps() auch kombiniert werden um einen initialen Content anzuzeigen. Kombination mit ServerSideProps() macht keinen Sinn.
+
+> dynamisches Laden auf ClientSide kann mit normalen useEffect() implementiert haben oder mit der Helper Function useSWR() von vercel 
+mit der dies etwas eindacher implementiert werden kann. (siehe Video Page Prerendering & Data Fetching > Using the "useSWR" NextJS Hook)
+
+Am Beispiel projectRouting
+> All EventsPage wäre eine getStaticProps() mit einem revalidate von 1 minute z.B.
+> EventDetailPage wäre auch getStaticProps() mit getStaticPath() um next die Anzahl der möglichen Seiten mitzuteilen -> fallback wäre hier false denn wir haben alle möglichen paths angegeben
+> EventFilter -> wäre eine geServerSideProps() Page den wir haben sehr viele verschiedene Varianten wo Prerendering zu Aufwändig wäre
+
+Header
+> import Head from next/Head
+> können dann mit <Head> </Head> die meta tags pro Seite einbinden
+> können auch dynamische Werte setzen mit {Variable}
+> ViewPort Head tag kann auch im _app.js gesetzt werden -> damit ist es auf allen Seiten verfügbar (wie Layout)
+> alle Head Sections werden gemerged (z.B. aus _app.js und index.js) -> bei 2 gleichen Head Tags wird das letzte genommen
+> wir können in _app.js einen Fallback Title setzen und diesen dann auf den pages überschreiben -> damit haben wir den Fallback Title auch dann wenn wir vergessen einen zu setzen
+
+Documents.js
+> Hier können wir die allegemeine HTML Struktur bearbeiten
+
+Image
+> das <Image /> tag rechnet Bilder automatisch klein und läd Sie erst dann nach wenn Sie sichbar sind -> also perferkt optimiert 
+
+
+APIs bauen mit next.js
+> Wir können in next.js auch apis bauen
+> hiefür benötigen wir im Ordner pages einen Unterordner mit /api wo wir routen ablengen können
+> orientiert sich an der express.js Synatx
+> API Funktionen können aus dem api Folder in den Pages folder importiert werden und dann Serverseitig mit getStaticProps() etc. ausgeführt werden ohne HttpRequests
+> Wir können dynamische APIs bauen genauso wie dynamische Seiten mit [] für params 
+> Für Parmas haben wir ein Beispiel in api/[id] im Zusammenspiel mit feedback.js im ProjectRouting
+
+______________________________________
