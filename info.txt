@@ -100,6 +100,8 @@ Deployment
  Authentication
   > NextAuth ist das Package mit dem Authentication umgesetzt wird.
   > in diesem Projekt wird next auth 3 genutzt -> später besser die aktuelle Version
+  > die authentication Routes müssen unter api in einem auth Ordner gespeichert werden 
+  > die filenames können wir aussuchen -> Sie dürfen aber nicht mit den hier genannten von next.js kollidieren -> https://next-auth.js.org/getting-started/rest-api
 
 
 

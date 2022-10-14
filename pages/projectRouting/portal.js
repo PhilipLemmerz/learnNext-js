@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import ReactDOM from "react-dom";
 import { Fragment } from "react";
 import { useEffect, useState } from 'react'

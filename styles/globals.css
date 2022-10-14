@@ -42,3 +42,13 @@ h6 {
   align-items: center;
   justify-content: center;
  }
+
+ .authProject {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(224, 115, 215, 0.541);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }

@@ -2,10 +2,10 @@ import Link from "next/link";
 import classes from './header.module.css';
 
 function Header() {
-    return (
+       return (
         <header className={classes.header}>
             <div>
-                <Link href="/projectRouting"><h4> Router-Project</h4></Link>
+                <Link href="/"><h4> Router-Project</h4></Link>
             </div>
             <nav className={classes.navigation}>
                 <Link href="/projectRouting/events"><a className={classes.link}> All Events </a></Link>

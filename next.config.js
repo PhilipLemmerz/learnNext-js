@@ -18,7 +18,10 @@ module.exports = (phase) => {
       swcMinify: true,
       env: {
         envVar1: 'testDeploy',
-        envVar2: 'test2Deploy'
+        envVar2: 'test2Deploy',
+        NEXTAUTH_SECRET: 'mysupersecretsecret', // wichtig damit authentication funktioniert in nextAuth -> Muss im [...nextauth].js angegeben werden
+        NEXTAUTH_URL: 'http://localhost:3000/' // muss beim deployment angegeben werden.
+        // Achtung bei Vercel Hosting -> die VERCEL_URL Variable sezten.
       }
     }
   }
