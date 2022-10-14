@@ -8,9 +8,9 @@ class MyDocument extends Document {
             <Html lang="de">
                 <Head />
                 <body>
-                    <div id="externalDiv"> </div>
                     <Main />
                     <NextScript />
+                    <div id="portal"> </div>
                 </body>
             </Html>
         )

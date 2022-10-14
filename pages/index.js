@@ -19,6 +19,9 @@ function HomePage() {
                 <div className="routingProject">
                     <h3><Link href="/projectRouting"> Routing Project </Link> </h3>
                 </div>
+                <div className="authProject">
+                    <h3><Link href="/authenticationProject"> Auth Project </Link> </h3>
+                </div>
             </div>
         </div>
     )

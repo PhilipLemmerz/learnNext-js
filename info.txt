@@ -49,4 +49,62 @@ APIs bauen mit next.js
 > Wir können dynamische APIs bauen genauso wie dynamische Seiten mit [] für params 
 > Für Parmas haben wir ein Beispiel in api/[id] im Zusammenspiel mit feedback.js im ProjectRouting
 
+
+App Wide State
+> um einen App Wide State zu erzeugen gehen wir genauso vor wie in React mit einem Wrapper und die Componenten
+  die einen gleichen State benötigen.
+> Siehe hierzu die implementierung in LearningReact Repo
+
+
+Blog App
+
+Struktur
+ > Häufig enhält die Page nur eine Auflistung von verschiedenen Components die die Sektionen der Page darstellen
+ > Im Component Ordner haben wir dann einen HomePage Folder der die Components <OurServices> etc dann beeinhaltet.
+ > Damit haben wir eine bessere Wierverwertbarkeit als wenn wir den jsx Code direkt in der Page schreiben.
+
+Images 
+ > path ist immer /images/<name> -> wir müssen kein public angeben beim path-constructing
+ > <Image layout="responsive"/> -> durch das Layout tag haben wir die möglichkeit contain und cover wenn man so will zu setzen 
+
+<Link> Tag
+ > Wenn wir eine Component in einem Link rendern anstelle von plain text müssen wir das anker tag schreiben.
+ <Link href="/">  <a> <Logo /> </a> </Link>
+
+ > Das selbe gilt auch für komplexere <div> strukturen die auch in einem Link sein sollen
+
+ Markdown nutzen
+  > auch in next können wir markdown nutzen 
+  > um markdown in html umzuwandeln benötigen das package react-markdown (npm i react-markdown)
+  > wird importiert als import ReactMarkdown from 'react-markdown'.
+  > um den Code umzuwandeln schreiben wir: <ReactMarkdown> {markdownContent} </ReactMarkdown>
+  > der Markdown Text wird von der ReactMarkdown Component gewrappet und damit in jsx umgewandelt.
+
+
+Deployment
+ > Wir können eine Server App bauen die einen Server benötigt oder eine StaticSite bauen wie mit einem SSG
+ > mit npm run build bauen wir eine ServerSite App die auf einem NodeJS Server laufen muss. 
+ > mit npm run next export bauen wir den Static Build
+ > getServerSideProps() Fallback of getStaticPaths() und api Folder sind nicht verfügbar bei eineM StaticDeployment
+ > auch revalidate Option ist nicht verfügbar
+ > auch Image Optimierung benötigt Server Side Logic
+ > In next.config.js setzten wir alle env Variablen
+ > nach npm run build die kb überprüfen
+ > einfaches Deployment mit vercel 
+
+ > Static Side Deployment
+ > erst npm runbuild und dann npm  run export ausführen
+ > Dann haben wir einen Ordner out der die Dateien enthält
+
+
+ Authentication
+  > NextAuth ist das Package mit dem Authentication umgesetzt wird.
+  > in diesem Projekt wird next auth 3 genutzt -> später besser die aktuelle Version
+
+
+
+
+
+
+
 ______________________________________
